@@ -1,0 +1,15 @@
+{
+  "name": "alpha",
+  "scripts": {
+    "start": "jetpack",
+    "demo": "jetpack build",
+    "doc": "docy --build"
+  },
+  "docy": {
+    "dist": "public/doc"
+  },
+  "dependencies": {
+    "jetpack": "^0.14.0",
+    "docy": "^1.0.3"
+  }
+}

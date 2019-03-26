@@ -1,0 +1,9 @@
+{
+  "name": "gamma",
+  "scripts": {
+    "demo": "jetpack build"
+  },
+  "dependencies": {
+    "jetpack": "^0.14.0"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "beta",
+  "private": true,
+  "scripts": {
+    "start": "jetpack",
+    "demo": "jetpack build"
+  },
+  "dependencies": {
+    "jetpack": "^0.12.1"
+  }
+}
