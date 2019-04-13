@@ -1,6 +1,6 @@
 {
   "name": "ftpme",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Build and Publish Assets from Local npm Packages via FTP.",
   "author": "Matthias Giger",
   "license": "MIT",

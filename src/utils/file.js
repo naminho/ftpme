@@ -1,8 +1,9 @@
 import { writeFileSync, readFileSync } from 'fs'
+import { homedir } from 'os'
 import { join } from 'path'
 
-// Store config in install path of global package.
-const configFilePath = join(__dirname, '../../.ftpme')
+// Store config in user directory.
+const configFilePath = join(homedir(), '/.ftpme')
 
 // Util to manage access to the .ftpme config file.
 export const read = () => {
@@ -16,9 +17,9 @@ export const read = () => {
 }
 
 export const update = (credentials, silent = false) => {
-  let newCredentials = read()
+  const existingCredentials = read()
   let found = false
-  newCredentials = newCredentials.map(existing => {
+  const newCredentials = existingCredentials.map(existing => {
     // Update existing ones.
     if (existing.url === credentials.url) {
       found = true
@@ -32,9 +33,14 @@ export const update = (credentials, silent = false) => {
     newCredentials.push(credentials)
   }
 
-  writeFileSync(configFilePath, JSON.stringify(newCredentials), 'utf8')
+  try {
+    writeFileSync(configFilePath, JSON.stringify(newCredentials), 'utf8')
+  } catch(error) {
+    return console.warn('Couldn\'t store configuration locally.')
+  }
 
   if (!silent) {
-    console.log(`Configuration stored in ${configFilePath}.`)
+    const action = existingCredentials.length ? 'updated' : 'stored'
+    console.log(`Configuration ${action} in ${configFilePath}.`)
   }
 }
