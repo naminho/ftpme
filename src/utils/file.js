@@ -11,7 +11,7 @@ export const read = () => {
 
   try {
     values = JSON.parse(readFileSync(configFilePath, 'utf8'))
-  } catch(error) {}
+  } catch (error) {}
 
   return values
 }
@@ -35,8 +35,8 @@ export const update = (credentials, silent = false) => {
 
   try {
     writeFileSync(configFilePath, JSON.stringify(newCredentials), 'utf8')
-  } catch(error) {
-    return console.warn('Couldn\'t store configuration locally.')
+  } catch (error) {
+    return console.warn("Couldn't store configuration locally.")
   }
 
   if (!silent) {

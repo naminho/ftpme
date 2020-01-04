@@ -8,7 +8,9 @@ const basePaths = async pkg => {
 
 // Prompt for base paths for each package.
 export default packages => {
-  return new Promise(done => mapSeries(packages, basePaths, (error, results) => {
-    done(results)
-  }))
+  return new Promise(done =>
+    mapSeries(packages, basePaths, (error, results) => {
+      done(results)
+    })
+  )
 }

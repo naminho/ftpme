@@ -14,7 +14,7 @@ import rename from './rename'
 import upload from './upload'
 
 // Upload package dist files for scripts inside current folder to an FTP server.
-(async () => {
+;(async () => {
   // Load stored credentials or prompt when not found.
   const { url, user, password } = await credentials()
 
@@ -34,10 +34,10 @@ import upload from './upload'
   await prepare(ctx.packages, ctx.scripts)
 
   // Prompt for folders to be uploaded for each package.
-  set({ packages: await folders(ctx.packages)})
+  set({ packages: await folders(ctx.packages) })
 
   // Prompt for base upload path per package.
-  set({ packages: await base(ctx.packages)})
+  set({ packages: await base(ctx.packages) })
 
   // Prompt whether build paths should be merged.
   set({ packages: await rename(ctx.packages) })

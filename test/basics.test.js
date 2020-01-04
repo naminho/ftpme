@@ -38,7 +38,9 @@ afterAll(async () => {
 
 test('Can connect to FTP server.', () => {
   if (client.error) {
-    console.log('Couldn\'t connect to the local ftp server. Make sure to run the tests with sudo.')
+    console.log(
+      "Couldn't connect to the local ftp server. Make sure to run the tests with sudo."
+    )
   }
   expect(client.error).not.toBeTruthy()
 })
@@ -77,14 +79,14 @@ test('Uploads the files to the server.', async () => {
       absolute: join(fixturesOne, 'alpha'),
       relative: 'alpha',
       name: 'alpha',
-      folders: [ 'public/demo', 'public/doc' ],
+      folders: ['public/demo', 'public/doc'],
       base: '/alpha/'
     },
     {
       absolute: join(fixturesOne, 'gamma'),
       relative: 'gamma',
       name: 'gamma',
-      folders: [ 'public/demo' ],
+      folders: ['public/demo'],
       base: '/gamma'
     }
   ]

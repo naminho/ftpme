@@ -1,6 +1,6 @@
 // Mocks for interactive prompts.
 
-export const reuse = async (credentials) => Promise.resolve({})
+export const reuse = async credentials => Promise.resolve({})
 
 export const url = async () => Promise.resolve('test_url')
 

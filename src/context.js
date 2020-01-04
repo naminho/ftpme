@@ -3,7 +3,7 @@ let context = {
   directory: process.cwd()
 }
 
-export const set = (values) => {
+export const set = values => {
   Object.assign(context, values)
 }
 

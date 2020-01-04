@@ -8,15 +8,15 @@ const readPackageJSON = source => {
 }
 
 // Returns paths with applicable packages inside.
-export default (directory) => {
+export default directory => {
   const enhance = source => {
     const pkg = readPackageJSON(source)
-    return ({
+    return {
       absolute: source,
       relative: relative(process.cwd(), source),
       name: pkg.name,
       scripts: pkg.scripts
-    })
+    }
   }
   const isValidPackage = source => {
     const pkg = readPackageJSON(source)

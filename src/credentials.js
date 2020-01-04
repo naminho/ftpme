@@ -26,7 +26,7 @@ export default async () => {
       // Check if password can be found in keychain.
       pswd = await get(`ftpme:${credentials.url}`)
     }
-  } catch(error) {}
+  } catch (error) {}
 
   if (!credentials.password && !pswd) {
     pswd = await password()

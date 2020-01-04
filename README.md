@@ -12,12 +12,12 @@
 Uploads Assets (Demos or Documentations) for all your local npm projects to an FTP
 server.
 
-* Scans for packages
-* Builds assets
-* Uploads to FTP
-* Store credentials
-  * Locally
-  * Passwords in macOS Keychain
+- Scans for packages
+- Builds assets
+- Uploads to FTP
+- Store credentials
+  - Locally
+  - Passwords in macOS Keychain
 
 ## Installation
 

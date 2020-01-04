@@ -14,9 +14,9 @@ export default async (url, port, user, password, connected) => {
     })
     connecting.stop()
     return client
-  } catch(error) {
+  } catch (error) {
     connecting.stop()
-    console.error('Couldn\'t establish a connection to the server.')
+    console.error("Couldn't establish a connection to the server.")
     process.exit()
   }
 }

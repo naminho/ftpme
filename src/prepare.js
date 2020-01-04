@@ -31,6 +31,7 @@ const prepare = async (scripts, pkg) => {
 }
 
 // Install dependencies and run scripts.
-export default (packages, scripts) => new Promise(prepareDone => {
-  eachSeries(packages, prepare.bind(null, scripts), () => prepareDone())
-})
+export default (packages, scripts) =>
+  new Promise(prepareDone => {
+    eachSeries(packages, prepare.bind(null, scripts), () => prepareDone())
+  })
