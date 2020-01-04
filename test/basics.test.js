@@ -5,11 +5,11 @@ import localFTPServer from './utils/server'
 import connect from './../src/connect'
 import credentials from './../src/credentials'
 import packages from './../src/packages'
-import prepare from './../src/prepare'
 import upload from './../src/upload'
 import ctx, { set as setCtx } from './../src/context'
 
 let client
+let server
 
 const fixturesOne = join(process.cwd(), 'test/fixtures/one')
 const serverFiles = join(process.cwd(), 'test/server')
@@ -19,12 +19,21 @@ beforeAll(async () => {
     mkdirSync(serverFiles)
   }
   rimraf.sync(`${serverFiles}/**/*`)
-  await localFTPServer()
+  server = await localFTPServer()
   client = await connect('127.0.0.1', 21)
   setCtx({
     client,
     directory: fixturesOne
   })
+})
+
+afterAll(async () => {
+  if (client) {
+    client.close()
+  }
+  if (server) {
+    server.close()
+  }
 })
 
 test('Can connect to FTP server.', () => {
@@ -104,6 +113,7 @@ test('Uploads the files to the server.', async () => {
   await client.cd('demo')
   files = await client.list()
 
+  // NOTE fails if package alpha not installed and built.
   expect(files.length).toEqual(2)
   expect(files[0].name).toEqual('assets')
   expect(files[1].name).toEqual('index.html')
@@ -114,6 +124,7 @@ test('Uploads the files to the server.', async () => {
   expect(files[0].name).toEqual('alpha')
   expect(files[1].name).toEqual('gamma')
 
+  // NOTE will fail if gamma assets not built.
   await client.cd('gamma/public/demo/assets')
   files = await client.list()
 
