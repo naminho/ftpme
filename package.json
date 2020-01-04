@@ -41,6 +41,19 @@
     "prettier": "^1.19.1",
     "rimraf": "^3.0.0"
   },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "node": true
+          }
+        }
+      ],
+      "minify"
+    ]
+  },
   "prettier": {
     "semi": false,
     "singleQuote": true
