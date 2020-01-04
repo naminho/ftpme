@@ -10,6 +10,7 @@ import scripts from './scripts'
 import prepare from './prepare'
 import folders from './folders'
 import base from './base'
+import rename from './rename'
 import upload from './upload'
 
 // Upload package dist files for scripts inside current folder to an FTP server.
@@ -37,6 +38,9 @@ import upload from './upload'
 
   // Prompt for base upload path per package.
   set({ packages: await base(ctx.packages)})
+
+  // Prompt whether build paths should be merged.
+  set({ packages: await rename(ctx.packages) })
 
   // Upload the packages to the server.
   await upload(ctx.packages, ctx.client)

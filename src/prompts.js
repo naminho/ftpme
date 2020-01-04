@@ -133,6 +133,39 @@ export const base = async pkg => {
   return response.base
 }
 
+export const rename = async () => {
+  let response = await prompts(
+    [
+      {
+        type: 'confirm',
+        name: 'result',
+        message: 'Do you want to rename and merge the distribution folders?',
+        initial: false
+      }
+    ],
+    options
+  )
+
+  if (!response.result) {
+    return false
+  }
+
+  response = await prompts(
+    [
+      {
+        type: 'text',
+        name: 'rename',
+        message: 'Into which folder do you want to merge them?',
+        initial: '/',
+        validate: value => isValidPath(value)
+      }
+    ],
+    options
+  )
+
+  return response.rename
+}
+
 export const connection = async () => {
   let response = await prompts([{
       type: 'text',
