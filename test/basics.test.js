@@ -6,6 +6,7 @@ import connect from './../src/connect'
 import credentials from './../src/credentials'
 import packages from './../src/packages'
 import upload from './../src/upload'
+import prepare from './../src/prepare'
 import ctx, { set as setCtx } from './../src/context'
 
 let client
@@ -72,6 +73,14 @@ test('Finds all the applicable packages.', () => {
     packages: pkgs
   })
 })
+
+test('Install package dependencies and run scripts.', async () => {
+  await prepare(ctx.packages, ['demo', 'doc'])
+
+  expect(existsSync(join(fixturesOne, 'alpha', 'public'))).toEqual(true)
+  expect(existsSync(join(fixturesOne, 'gamma', 'public'))).toEqual(true)
+  // Wait ten minutes for async, as install and build can take a while.
+}, 60000)
 
 test('Uploads the files to the server.', async () => {
   const packages = [

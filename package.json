@@ -1,14 +1,12 @@
 {
   "name": "ftpme",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Build and Publish Assets from Local npm Packages via FTP.",
   "author": "Matthias Giger",
   "license": "MIT",
   "main": "build/index.js",
   "repository": "github:naminho/ftpme",
-  "bin": {
-    "ftpme": "build/index.js"
-  },
+  "bin": "build/index.js",
   "scripts": {
     "start": "babel-node src/index.js",
     "build": "babel src --out-dir build",
@@ -16,30 +14,30 @@
     "test": "sudo jest --watchAll --runInBand"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.7.0",
-    "async": "^3.1.0",
-    "basic-ftp": "^4.5.2",
-    "execa": "^4.0.0",
+    "@babel/polyfill": "^7.10.4",
+    "async": "^3.2.0",
+    "basic-ftp": "^4.6.2",
+    "execa": "^4.0.3",
     "filenamify": "^4.1.0",
     "is-url": "^1.2.4",
     "kychain": "^1.0.0",
-    "ora": "^4.0.3",
-    "prompts": "^2.3.0",
+    "ora": "^4.0.5",
+    "prompts": "^2.3.2",
     "valid-path": "^1.0.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.7.7",
-    "@babel/core": "^7.7.7",
-    "@babel/node": "^7.7.7",
-    "@babel/preset-env": "^7.7.7",
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.10.5",
+    "@babel/node": "^7.10.5",
+    "@babel/preset-env": "^7.10.4",
     "babel-core": "^7.0.0-bridge.0",
-    "babel-jest": "^24.9.0",
+    "babel-jest": "^26.1.0",
     "babel-preset-minify": "^0.5.1",
-    "bunyan": "^1.8.12",
-    "ftp-srv": "^4.3.0",
-    "jest": "^24.9.0",
-    "prettier": "^1.19.1",
-    "rimraf": "^3.0.0"
+    "bunyan": "^1.8.14",
+    "ftp-srv": "^4.3.2",
+    "jest": "^26.1.0",
+    "prettier": "^2.0.5",
+    "rimraf": "^3.0.2"
   },
   "babel": {
     "presets": [
@@ -55,8 +53,8 @@
     ]
   },
   "prettier": {
-    "semi": false,
-    "singleQuote": true
+    "singleQuote": true,
+    "semi": false
   },
   "jest": {
     "moduleNameMapper": {
