@@ -19,18 +19,12 @@ server.
   - Locally
   - Passwords in macOS Keychain
 
-## Installation
-
-```
-npm i -g ftpme
-```
-
-## Usage
+## Installation & Usage
 
 Navigate to the directory where your projects are located an run:
 
 ```
-ftpme
+npx --yes ftpme
 ```
 
 First this will prompt for your credentials to connect to the FTP server. Credentials will be stored locally in case you want to use them again. The password can optionally be stored as well. Then it will scan the current directory for packages (directories containing a package.json file) and prompt for which to consider. Then the dependencies are updated and the desired scripts will be run. Last but not least ftpme will prompt for the folders to be uploaded (scanning up to a depth of two folders) and upload them.
