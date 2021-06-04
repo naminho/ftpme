@@ -1,12 +1,12 @@
 <p></p>
 <p align="center">
-  <img src="https://raw.githubusercontent.com/naminho/ftpme/master/logo.png" alt="FTPme">
+  <img src="https://github.com/tobua/ftpme/raw/master/logo.png" alt="FTPme">
 </p>
 
 # FTPme
 
 <p align="center">
-    <img src="http://naminho.ch/ftpme/terminal.svg" alt="FTPme Terminal Demo">
+    <img src="https://github.com/tobua/ftpme/raw/master/terminal.svg" alt="FTPme Terminal Demo">
 </p>
 
 Uploads Assets (Demos or Documentations) for all your local npm projects to an FTP

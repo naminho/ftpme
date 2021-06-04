@@ -4,6 +4,6 @@
     "demo": "jetpack build"
   },
   "dependencies": {
-    "jetpack": "^0.18.1"
+    "jetpack": "^0.21.1"
   }
 }

@@ -24,7 +24,7 @@ beforeAll(async () => {
   client = await connect('127.0.0.1', 21)
   setCtx({
     client,
-    directory: fixturesOne
+    directory: fixturesOne,
   })
 })
 
@@ -70,7 +70,7 @@ test('Finds all the applicable packages.', () => {
   expect(gamma.name).toEqual('gamma')
 
   setCtx({
-    packages: pkgs
+    packages: pkgs,
   })
 })
 
@@ -89,15 +89,15 @@ test('Uploads the files to the server.', async () => {
       relative: 'alpha',
       name: 'alpha',
       folders: ['public/demo', 'public/doc'],
-      base: '/alpha/'
+      base: '/alpha/',
     },
     {
       absolute: join(fixturesOne, 'gamma'),
       relative: 'gamma',
       name: 'gamma',
       folders: ['public/demo'],
-      base: '/gamma'
-    }
+      base: '/gamma',
+    },
   ]
 
   await upload(packages, client)

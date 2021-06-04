@@ -9,7 +9,7 @@
     "dist": "public/doc"
   },
   "dependencies": {
-    "jetpack": "^0.18.1",
-    "docy": "^1.0.4"
+    "docy": "^1.0.5",
+    "jetpack": "^0.21.1"
   }
 }
